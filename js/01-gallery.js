@@ -22,6 +22,9 @@ galleryEBox.addEventListener(
 );
 // close modal window key Escape
 document.addEventListener('keyup', event => {
+   if (!document.querySelector('.basicLightbox')) {
+      return;
+   }
    const basicLightboxEL = document.querySelector('.basicLightbox');
    if ((event.code === 'Escape') & (basicLightboxEL !== null)) {
       basicLightboxEL.remove();

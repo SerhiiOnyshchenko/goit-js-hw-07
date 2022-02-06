@@ -3,7 +3,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryEBox = document.querySelector('.gallery');
 // create images
 const arrImages = galleryItems.map(({ preview, original, description }) => {
-   return `<a class="gallery__item" href="${original}"><img class="gallery__image" src="${preview}" alt="${description}" title="${description}"/></a>`;
+   return `<li><a class="gallery__item" href="${original}"><img class="gallery__image" src="${preview}" alt="${description}" title="${description}"/></a></li>`;
 });
 galleryEBox.insertAdjacentHTML('beforeend', arrImages.join(''));
 // open modal window
@@ -12,6 +12,3 @@ gallery.on('show.simplelightbox', function () {
    gallery.defaultOptions.captionDelay = 250;
 });
 
-gallery.on('error.simplelightbox', function (e) {
-   console.log(e); // some usefull information
-});
